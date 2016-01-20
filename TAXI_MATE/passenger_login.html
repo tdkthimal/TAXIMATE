@@ -12,23 +12,25 @@
             <div class="main" style="position: relative;"> 
                 
                 <button id="backButton"  class="btn btn-1 btn-1a" style="position: absolute; left: -40px; top: -20px;" onclick="location.href='index.html';">Back</button>
-                <h1>TAXI MATE</h1>
-                <button id="loginButton"  class="btn btn-1 btn-1a" style="position: absolute; left: 460px; top: -20px;">Next</button>
+                <h1>Driver Login</h1>
             </div>
         </div>
 		
         <div class="container" >
 			<div class="main" >
 			     <br><br>
+                <form method="post" action="./login">
                 <lable>Phone Number</lable>
                 <br><br>
-                <input type="text" name="phoneNumber">
+                <input type="text" name="user" hidden="true" value="passenger">
+                <input type="text" name="contactNo">
                 <br><br>
                 <lable>Password</lable>
                 <br><br>
                 <input type="password" name="password">
                 <br><br>
-                 
+                <button class="btn btn-6 btn-6l" id="loginButton"  >Login</button>
+                </form>
             </div>
         </div>
         
