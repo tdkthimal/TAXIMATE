@@ -16,29 +16,70 @@
                 
                 <lable>Name</lable>
                 <br><br>
-                <input type="text" name="firstName">
-                <input type="text" name="lastName">
+                <input type="text" id="firstName" name="firstName">
+                <input type="text" id="lastName" name="lastName">
 				<br><br>
                 <lable>NIC</lable>
                 <br><br>
-                <input type="text" name="nic">
+                <input type="text" id="nic" name="nic">
                 <br><br>
                 <lable>Phone Number</lable>
                 <br><br>
-                <input type="text" name="phoneNumber">
+                <input type="text" id="contactNo" name="phoneNumber">
                 <br><br>
                 <lable>Password</lable>
                 <br><br>
-                <input type="password" name="password">
+                <input type="password" id="password" name="password">
                 <br><br>
                 <button class="btn btn-6 btn-6l" id="nextButton">Next</button>
 				
 			</div>
 		</div>
         
+        <script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/classie.js"></script>
 		<script>
-			
+			 function registerDriver(firstName,lastName,nic,contactNo,password,){
+                
+                $.ajax({
+                  type: "POST",
+                  url: "http://localhost:8000/login",
+                  crossDomain:true,
+                  data: 
+                    {
+                        user:'driver',
+                        firstName:firstName,
+                        lastName:lastName,
+                        nic:nic,
+                        contactNo:contactNo,
+                        password:password
+                    },
+                  dataType: "html"
+                }).done(function(data){
+                    if(data=="1"){
+                        $(location).attr('href', './driver_home.html')
+                    }else if(data=="0"){
+                        $('#wrongPwd').show();
+                    }else if(data=="-1"){
+                        $('#wrongPwd').show();
+                    }
+                });
+
+/*
+                $.getJSON('http://localhost:8000/login', function(){
+                    console.log('data');
+                });
+*/
+            }
+
+            $('#nextButton').on('click',function(){
+                firstName=$('#firstName').val();
+                lastName=$('#lastName').val();
+                nic=$('#nic').val();
+                contactNo=$('#contactNo').val();
+                password=$('#password').val();
+                registerDriver(firstName,lastName,nic,contactNo,password);
+            });
 		</script>
 	</body>
 </html>
