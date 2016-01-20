@@ -16,27 +16,50 @@
             </div>
         </div>
 		
-        <div class="container" >
-			<div class="main" >
-			     <br><br>
-                <form method="post" action="./login">
+         <div class="container" >
+            <div class="main" >
+                 <br><br>
                 <lable>Phone Number</lable>
                 <br><br>
                 <input type="text" name="user" hidden="true" value="passenger">
-                <input type="text" name="contactNo">
+                <input id="contactNo" type="text" name="contactNo">
                 <br><br>
                 <lable>Password</lable>
                 <br><br>
-                <input type="password" name="password">
+                <input id="password" type="password" name="password">
                 <br><br>
                 <button class="btn btn-6 btn-6l" id="loginButton"  >Login</button>
-                </form>
             </div>
         </div>
         
-		<script src="js/classie.js"></script>
-		<script>
+        <script src="js/classie.js"></script>
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <script>
+            function login(contactNo,password){
+                
+                $.ajax({
+                  type: "POST",
+                  url: "http://localhost:8000/login",
+                  crossDomain:true,
+                  data: 
+                    {
+                        user:'passenger',
+                        contactNo:contactNo,
+                        password:password
+                    },
+                  dataType: "html"
+                }).done(function(data){
+                    if(data=="1"){
+                        $(location).attr('href', './passenger_home.html')
+                    }
+                });
+            }
 
-		</script>
+            $('#loginButton').on('click',function(){
+                contactNo=$('#contactNo').val();
+                password=$('#password').val();
+                login(contactNo,password);
+            });
+        </script>
 	</body>
 </html>
