@@ -251,6 +251,42 @@ lable{
 }
 
 
+input[type=time] {
+    font-size: 20px;
+    color: #47a3da;
+    font-style: italic;
+    height:40px;
+    border: 0;
+    width: 250px;
+    margin-left:1px;
+    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+
+}
+input[type=time]:focus {
+  outline: none;
+  box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
+}
+
+input[type=date] {
+    font-size: 20px;
+    color: #47a3da;
+    font-style: italic;
+    height:40px;
+    border: 0;
+    width: 250px;
+    margin-left:1px;
+    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+
+}
+input[type=date]:focus {
+  outline: none;
+  box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
+}
+
 input[type=text] {
     font-size: 20px;
     color: #47a3da;
