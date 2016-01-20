@@ -5,8 +5,8 @@
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
         <link rel="stylesheet" type="text/css" href="css/component_button.css" />
-	   
-    </head>
+	   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	</head>
 	<body class="spmenu-push">
         <div id="header">
             <div class="main" style="position: relative;"> 
@@ -28,20 +28,30 @@
 		<div class="container">
 			<div class="main">
 				
-                <img border="0" src="./img/icon-profile.png" alt="name" width="304" height="228" /><br>
                 
                 <lable>Pick a Date</lable><br><br>
-                <input type="datetime" name="dateTime">
+                <input type="date" id="datepicker" name="date">
                 
+                <br><br>
+                
+                <lable>Pick a Time</lable><br><br>
+                <input type="time" id="timepicker" name="time">
+                
+                <br><br>
                 
                 <button class="btn btn-6 btn-6l" id="Book">Book Now</button>
               
                 
 			</div>
 		</div>
-        
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="js/classie.js"></script>
-		<script>
+		
+        <script>
+            $(function() {
+		      $( "#datepicker" ).datepicker();
+	       });
 			var menuLeft = document.getElementById( 'spmenu-s1' ),
 				menuButton = document.getElementById( 'menuButton' ),
 				body = document.body;
