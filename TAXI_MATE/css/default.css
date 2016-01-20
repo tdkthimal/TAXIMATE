@@ -263,3 +263,18 @@ input[type=password]:focus {
   outline: none;
   box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
 }
+
+#mapbox{
+
+}
+#map{
+    
+}
+#input{
+
+    margin-top: 100px;
+    margin-left: 50px;  
+}
+#input input{
+        width: 600px;
+}
