@@ -19,7 +19,8 @@
     }
 }
 
-
+#map {S
+}
 
 body, html {
     font-size: 100%; 	
@@ -210,6 +211,15 @@ a:hover {
 	content: "\f060";
 }
 
+/* Div border */
+.listborder {
+    border-radius: 25px;
+    border: 2px solid #47a3da;
+    padding: 20px; 
+    width: 560px;
+    height: 150px; 
+}
+
 lable{
     font-size: 1.5em;
 	line-height: 1.0;
@@ -252,3 +262,5 @@ input[type=password]:focus {
   outline: none;
   box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
 }
+
+

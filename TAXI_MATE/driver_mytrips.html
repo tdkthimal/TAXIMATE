@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
-        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="shortcut icon" href="">
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
         <link rel="stylesheet" type="text/css" href="css/component_button.css" />
@@ -11,8 +11,7 @@
         <div id="header">
             <div class="main" style="position: relative;"> 
                 <button id="menuButton"  class="btn btn-1 btn-1a" style="position: absolute; left: -40px; top: -20px;">Menu</button>
-                <h1>My Trips</h1>
-                <button id="editButton"  class="btn btn-1 btn-1a" style="position: absolute; left: 520px; top: -20px;">Edit</button>   
+                <h1>My Trips</h1> 
             </div>    
         </div>
                 
@@ -26,22 +25,43 @@
 			<a href="driver_support.html">Support</a>
 			<a href="driver_aboutus.html">About Us</a>
 		</nav>
-		<div class="container" style="position: absolute; left: 100px;">
-                <img border="0" src="./img/icon-profile.png" alt="Profile Picture" width="304" height="228" /><br>
-                <form method="post" action="./updateuser">
-                    <lable>Name</lable><br><br>
-                    <input type="text" name="firstName">
-                    <input type="text" name="lastName">
-                    <br><br>
+		<div class="">
+			<div class="">
+                <div>
+                    <ul id="myTabs" class="nav nav-pills" role="tablist">
+                        <li role="trip history" class="active" id="#triphistory">
+                            <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Trip History</a>
+                        </li>
+                        <li role="bookings" id="#bookings">
+                            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Bookings</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="trip history">
+                            <div class="listborder" style="position: relative;">
+                                <p style="position: absolute; left: 10px; top: 00px;">Charith: 2016/01/07</p>
+                                <p style="position: absolute; left: 10px; top: 20px;">From :Maharagama</p>
+                                <p style="position: absolute; left: 10px; top: 40px;">To   :Kottawa</p>
+                                <br><br>
+                                <lable class="btn btn-6 btn-6l" id="acceptbutton"  style="position: absolute; left: 200px; top: 60px" >Accepted</lable>
+                            </div> 
+                            <div class="listborder" style="position: relative;">
+                                <p style="position: absolute; left: 10px; top: 00px;">Dinuka: 2016/01/07</p>
+                                <p style="position: absolute; left: 10px; top: 20px;">From :Katubedda</p>
+                                <p style="position: absolute; left: 10px; top: 40px;">To   :Piliyandala</p><br><br>
+                                <lable class="btn btn-6 btn-6l" id="acceptbutton"  style="position: absolute; left: 200px; top: 60px" >Accepted</lable>                
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="bookings"></div>
+                    </div>
+			     </div>
+		  </div>
+        
 
-                    <lable>E-mail Address</lable><br><br>
-                    <input type="text" name="email"><br>
-                    <button class="btn btn-6 btn-6l" id="changePassword"  onclick="location.href='passenger_change_password.html';">Change Password</button>
-                </form>
-			</div> 
-		</div>
         
 		<script src="js/classie.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script>
 			var menuLeft = document.getElementById( 'spmenu-s1' ),
 				menuButton = document.getElementById( 'menuButton' ),
@@ -53,6 +73,16 @@
 				classie.toggle( menuLeft, 'spmenu-open' );
 				disableOther( 'menuButton' );
 			};
+            
+            $('#myTabs a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+                console.log("tab clicked");
+            });
+            
+           
 		</script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</body>
 </html>
