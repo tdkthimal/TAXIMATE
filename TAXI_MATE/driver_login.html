@@ -28,8 +28,6 @@
                 <br><br>
                 <input id="password" type="password" name="password">
                 <br><br>
-                <div class="alert alert-danger" role="alert" id="wrongPwd" style="display:none;font-color:red
-                ">You entered wrong password or username!</div>
                 <button class="btn btn-6 btn-6l" id="loginButton"  >Login</button>
             </div>
         </div>
@@ -53,10 +51,6 @@
                 }).done(function(data){
                     if(data=="1"){
                         $(location).attr('href', './driver_home.html')
-                    }else if(data=="0"){
-                        $('#wrongPwd').show();
-                    }else if(data=="-1"){
-                        $('#wrongPwd').show();
                     }
                 });
 

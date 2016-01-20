@@ -11,7 +11,7 @@
         <div id="header">
             <div class="main" style="position: relative;"> 
                 
-                <button id="backButton"  class="btn btn-1 btn-1a" style="position: absolute; left: -40px; top: -20px;" onclick="location.href='passenger_index.html';">Back</button>
+                <button id="backButton"  class="btn btn-1 btn-1a" style="position: absolute; left: -40px; top: -20px;" onclick="location.href='index.html';">Back</button>
                 <h1>Driver Login</h1>
             </div>
         </div>
@@ -27,13 +27,11 @@
                 <lable>Password</lable>
                 <br><br>
                 <input id="password" type="password" name="password">
-                <br>
-                <br>
-                <div class="alert alert-danger" role="alert" id="wrongPwd" style="display:none;font-color:red
-                ">You entered wrong password or username!</div>
+                <br><br>
                 <button class="btn btn-6 btn-6l" id="loginButton"  >Login</button>
             </div>
         </div>
+        
         <script src="js/classie.js"></script>
         <script src="js/jquery-1.12.0.min.js"></script>
         <script>
@@ -53,10 +51,6 @@
                 }).done(function(data){
                     if(data=="1"){
                         $(location).attr('href', './passenger_home.html')
-                    }else if(data=="0"){
-                        $('#wrongPwd').show();
-                    }else if(data=="-1"){
-                        $('#wrongPwd').show();
                     }
                 });
             }

@@ -10,9 +10,9 @@
 	<body class="spmenu-push">
         <div id="header">
             <div class="main" style="position: relative;"> 
-                <button id="menuButton"  class="btn btn-1 btn-1a" style="position: absolute; left: -40px; top: -20px;">Menu</button>
-                <h1>Home</h1>
-                <button id="editButton"  class="btn btn-1 btn-1a" style="position: absolute; left: 520px; top: -20px;">Edit</button>   
+                <button id="menuButton"  class="btn btn-1 btn-1a" style="position: absolute; left: -40px; top: -20px;"><img src="./img/menu.png"></button>
+                <h1>Taxi Mate</h1>
+                   
             </div>    
         </div>
                 
@@ -26,20 +26,34 @@
 			<a href="driver_support.html">Support</a>
 			<a href="driver_aboutus.html">About Us</a>
 		</nav>
-		<div class="container" style="position: absolute; left: 100px;">
-                <img border="0" src="./img/icon-profile.png" alt="Profile Picture" width="304" height="228" /><br>
-                <form method="post" action="./updateuser">
-                    <lable>Name</lable><br><br>
-                    <input type="text" name="firstName">
-                    <input type="text" name="lastName">
-                    <br><br>
+        <div class="container">
+			<div class="main">
+                <h1>Taxi requests</h1>
+		     <br>
+                <div class="listborder" style="position: relative;">
+                   
+                    <p style="position: absolute; left: 10px; top: 20px;">From :Charith</p>
+                    <p style="position: absolute; left: 10px; top: 40px;">To   :Piliyandala</p><br><br>
+                    <button class="btn btn-6 btn-6l" id="acceptbutton"  style="position: absolute; left: 200px; top: 60px" >Accept</button>
+                    <button class="btn btn-6 btn-6l" id="declinebutton" style="position: absolute; left: 350px; top: 60px">Decline</button>
+                    
 
-                    <lable>E-mail Address</lable><br><br>
-                    <input type="text" name="email"><br>
-                    <button class="btn btn-6 btn-6l" id="changePassword"  onclick="location.href='passenger_change_password.html';">Change Password</button>
-                </form>
-			</div> 
+                    
+                </div>
+                <br>
+                <div class="listborder" style="position: relative;">
+                    
+                    <p style="position: absolute; left: 10px; top: 20px;">From :Dinuka</p>
+                    <p style="position: absolute; left: 10px; top: 40px;">To   :Athurugiriya</p>
+                    <button class="btn btn-6 btn-6l" id="acceptbutton"  style="position: absolute; left: 200px; top: 60px" >Accept</button>
+                    <button class="btn btn-6 btn-6l" id="declinebutton" style="position: absolute; left: 350px; top: 60px">Decline</button
+                    
+                   
+                </div>
+                <br> 
+            	</div>
 		</div>
+                
         
 		<script src="js/classie.js"></script>
 		<script>
