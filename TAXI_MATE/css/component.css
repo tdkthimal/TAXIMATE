@@ -16,7 +16,7 @@
 .spmenu a {
 	display: block;
 	color: #fff;
-	font-size: 1.1em;
+	font-size: 3.5em;
 	font-weight: 300;
 }
 
@@ -32,7 +32,7 @@
 /* Orientation-dependent styles for the content of the menu */
 
 .spmenu-vertical {
-	width: 240px;
+	width: 400px;
 	height: 100%;
 	top: 0;
 	z-index: 1000;
@@ -67,7 +67,7 @@
 /* Vertical menu that slides from the left or right */
 
 .spmenu-left {
-	left: -240px;
+	left: -500px;
 }
 
 .spmenu-right {

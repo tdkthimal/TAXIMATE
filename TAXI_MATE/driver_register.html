@@ -7,38 +7,99 @@
         <link rel="stylesheet" type="text/css" href="css/component_button.css" />
         
 	</head>
-	<body>
+	<body  style="width: 140%; height:140%">
 		<div id="header">
-            <h1>Driver Register</h1>
+            <h>Driver Register</h>
         </div>
         <div class="container">
 			<div class="main" >
                 
                 <lable>Name</lable>
-                <br><br>
+<<<<<<< HEAD
+                <br><br><br><br>
                 <input type="text" name="firstName">
                 <input type="text" name="lastName">
+				<br><br><br><br>
+                <lable>NIC</lable>
+                <br><br><br><br>
+                <input type="text" name="nic">
+                <br><br><br><br>
+                <lable>Phone Number</lable>
+                <br><br><br><br>
+                <input type="text" name="phoneNumber">
+                <br><br><br><br>
+                <lable>Password</lable>
+                <br><br><br><br>
+                <input type="password" name="password">
+                <br><br><br><br>
+                <button class="btnL btn-6 btn-6l" id="nextButton">Next</button>
+=======
+                <br><br>
+                <input type="text" id="firstName" name="firstName">
+                <input type="text" id="lastName" name="lastName">
 				<br><br>
                 <lable>NIC</lable>
                 <br><br>
-                <input type="text" name="nic">
+                <input type="text" id="nic" name="nic">
                 <br><br>
                 <lable>Phone Number</lable>
                 <br><br>
-                <input type="text" name="phoneNumber">
+                <input type="text" id="contactNo" name="phoneNumber">
                 <br><br>
                 <lable>Password</lable>
                 <br><br>
-                <input type="password" name="password">
+                <input type="password" id="password" name="password">
                 <br><br>
                 <button class="btn btn-6 btn-6l" id="nextButton">Next</button>
+>>>>>>> d8ad62f0276c40454a2edf6430870e576da2a912
 				
 			</div>
 		</div>
         
+        <script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/classie.js"></script>
 		<script>
-			
+			 function registerDriver(firstName,lastName,nic,contactNo,password,){
+                
+                $.ajax({
+                  type: "POST",
+                  url: "http://localhost:8000/login",
+                  crossDomain:true,
+                  data: 
+                    {
+                        user:'driver',
+                        firstName:firstName,
+                        lastName:lastName,
+                        nic:nic,
+                        contactNo:contactNo,
+                        password:password
+                    },
+                  dataType: "html"
+                }).done(function(data){
+                    if(data=="1"){
+                        $(location).attr('href', './driver_home.html')
+                    }else if(data=="0"){
+                        $('#wrongPwd').show();
+                    }else if(data=="-1"){
+                        $('#wrongPwd').show();
+                    }
+                });
+
+/*
+                $.getJSON('http://localhost:8000/login', function(){
+                    console.log('data');
+                });
+*/
+            }
+
+            $('#nextButton').on('click',function(){
+                firstName=$('#firstName').val();
+                lastName=$('#lastName').val();
+                nic=$('#nic').val();
+                contactNo=$('#contactNo').val();
+                password=$('#password').val();
+                registerDriver(firstName,lastName,nic,contactNo,password);
+            });
 		</script>
 	</body>
 </html>

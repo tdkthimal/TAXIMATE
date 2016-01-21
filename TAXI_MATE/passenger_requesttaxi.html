@@ -25,67 +25,32 @@
 			<a href='passenger_aboutus.html'>About Us</a>
 		</nav>
 		<div class="container">
-			<div class="main">
+			<div class="main" id="mainContainer">
                 
                 <! To keep the start and destination hidden>
                 <input type="text" name="startLocation" hidden="true" value="?">
                 <input type="text" name="destination" hidden="true" value="?">
                 
-                <button id="carButton"  class="btn btn-1 btn-1a" style="position: absolute; left: 0px; top: 150px;"><img src="./img/car.png" width="128" height="128"/></button>
-                <button id="tukTukButton"  class="btn btn-1 btn-1a" style="position: absolute; left: 250px; top: 150px;"><img src="./img/tuk%20tuk.png" width="128" height="128"/></button>
-                <button id="vanButton"  class="btn btn-1 btn-1a" style="position: absolute; left: 500px; top: 150px;"><img src="./img/bus.png" width="128" height="128"/></button>
+                <button id="carButton"  class="btn btn-1 btn-1a" style="position: absolute; left: 0px; top: 150px;"><img src="./img/car.png" width="100" height="100"/></button>
+                <button id="tukTukButton"  class="btn btn-1 btn-1a" style="position: absolute; left: 250px; top: 150px;"><img src="./img/tuk%20tuk.png" width="100" height="100"/></button>
+                <button id="vanButton"  class="btn btn-1 btn-1a" style="position: absolute; left: 500px; top: 150px;"><img src="./img/bus.png" width="100" height="100"/></button>
                 
                 
 				<br><br><br><br><br><br><br><br><br><br><br><br>
-                <div class="listborder" style="position: relative;">
-                    <h3 style="position: absolute; left: 200px; top: 20px;">Koshiya</h3>
-                    <h3 style="position: absolute; left: 210px; top: 50px;">Rate: 50 rs/km</h3>
-                    <img  src="./img/business124.png" alt="Profile Picture" width="128" height="128" style="position: absolute; left: 10px; top: 10px;"/>
-                    <img src="./img/auto2.png" alt="Vehicle Type" width="32" height="32" style="position: absolute; left: 300px; top: 25px;"/>
-                    <img src="./img/heartBlue.png" alt="Favourite" width="64" height="64" style="position: absolute; left: 450px; top: 20px;"/>
-                    <div class="starDiv" style="position: absolute; left: 400px; top: 100px;">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlue.png">
-                    </div>              
-                </div>
-                <br>
-                <div class="listborder" style="position: relative;">
-                    <h3 style="position: absolute; left: 200px; top: 20px;">Namal</h3>
-                    <h3 style="position: absolute; left: 210px; top: 50px;">Rate: 50 rs/km</h3>
-                    <img border="0" src="./img/business124.png" alt="Profile Picture" width="128" height="128" style="position: absolute; left: 10px; top: 10px;"/>
-                    <img border="0" src="./img/bus.png" alt="Vehicle Type" width="32" height="32" style="position: absolute; left: 300px; top: 25px;"/>
-                    <img border="0" src="./img/heartBlack.png" alt="Favourite" width="64" height="64" style="position: absolute; left: 450px; top: 20px;"/>
-                    <div class="starDiv" style="position: absolute; left: 400px; top: 100px;">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlack.png">
-                    </div>
-                </div>
-                <br>
-                <div class="listborder" style="position: relative;">
-                    <h3 style="position: absolute; left: 200px; top: 20px;">Saman</h3>
-                    <h3 style="position: absolute; left: 210px; top: 50px;">Rate: 50 rs/km</h3>
-                    <img border="0" src="./img/business124.png" alt="Profile Picture" width="128" height="128" style="position: absolute; left: 10px; top: 10px;"/>
-                    <img border="0" src="./img/car188.png" alt="Vehicle Type" width="32" height="32" style="position: absolute; left: 300px; top: 25px;"/>
-                    <img border="0" src="./img/heartBlack.png" alt="Favourite" width="64" height="64" style="position: absolute; left: 450px; top: 20px;"/>
-                    <div class="starDiv" style="position: absolute; left: 400px; top: 100px;">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlue.png">
-                            <img src="./img/starBlack.png">
-                            <img src="./img/starBlack.png">
-                    </div>
+
+
                 </div>
 			</div>
 		</div>
         
+        <script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/classie.js"></script>
 		<script>
+
+            var star=['<div class="starDiv" style="position: absolute; left: 400px; top: 100px;"><img src="./img/starBlue.png"><img src="./img/starBlue.png"><img src="./img/starBlue.png"><img src="./img/starBlue.png"><img src="./img/starBlack.png"></div>',
+                '<div class="starDiv" style="position: absolute; left: 400px; top: 100px;"><img src="./img/starBlue.png"><img src="./img/starBlue.png"><img src="./img/starBlack.png"><img src="./img/starBlack.png"><img src="./img/starBlack.png"></div>',
+                '<div class="starDiv" style="position: absolute; left: 400px; top: 100px;"><img src="./img/starBlue.png"><img src="./img/starBlue.png"><img src="./img/starBlue.png"><img src="./img/starBlack.png"><img src="./img/starBlack.png"></div>'];
+
 			var menuLeft = document.getElementById( 'spmenu-s1' ),
 				menuButton = document.getElementById( 'menuButton' ),
 				body = document.body;
@@ -96,6 +61,61 @@
 				classie.toggle( menuLeft, 'spmenu-open' );
 				disableOther( 'menuButton' );
 			};
+
+            var starList
+
+            function getAvailableDrivers(){
+                $.getJSON( "http://localhost:8000/availabledrivers", function( data ) {
+                  var drivers = [];
+                  $.each( data, function( key, value ) {
+                    if(value.specialFare!=''){
+                        fare=value.dayTimeFare;
+                    }
+                    rating =Math.round((value.rating)/2);
+
+                    var $div=$("<div>",{id:"driver"+key,class:'listborder',style:'position:relative;border-radius:10px'});
+                    var img=$("<img id=driverImage"+key+">");
+                    img.attr('src','./img/business124.png');
+                    img.attr('width','100');
+                    img.attr('height','100');
+                    var name=$("<h3>",{'style':'position:absolute;left:250px;top:10px',
+                        id:'driverName'+key,padding:'0'});
+                    name.append(value.firstName);
+                    var rate=$("<h3>",{'style':'position:absolute;left:250px;top:60px',
+                        id:'driverRate'+key});
+                    rate.append(fare+"Rs/km");
+                    $div.append(img);
+                    $div.append(name);
+                    $div.append(rate);
+
+                    $div.append("<div class=\"starDiv\" id=key style=\"position: absolute; left: 400px; top: 100px;\">")
+
+                    $div.append('<img border="0" src="./img/heartBlack.png" alt="Favourite" width="64" height="64" style="position: absolute; left: 450px; top: 20px;"/>');
+                    /*
+                    for (var i = 0; i <rating; i++) {
+                        var img=$("<img id=driverImage"+key+">");
+                        img.attr('src','./img/starBlue.png');
+                        $('#'+key).append(img);
+                    };
+
+                    for (var i = 0; i <(5%rating); i++) {
+                        var img=$("<img id=driverImage"+key+">");
+                        img.attr('src','./img/starBlack.png');
+                        $('#'+key).append(img);
+                    };
+                    */
+                    $div.append(star[key%3]);
+                    $('#mainContainer').append("<br>");
+                    $('#mainContainer').append($div);
+
+                  });
+                 
+                });
+            }
+            $(document).ready(function(){
+                getAvailableDrivers();
+            });
+
 		</script>
 	</body>
 </html>

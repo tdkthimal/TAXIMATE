@@ -7,12 +7,12 @@
 	   <link rel="stylesheet" type="text/css" href="css/component_button.css" />
         
     </head>
-	<body class="spmenu-push">
+	<body class="spmenu-push" style="width: 140%; height:140%">
         <div id="header">
             <div class="main" style="position: relative;"> 
                 
                 <button id="backButton"  class="btn btn-1 btn-1a" style="position: absolute; left: -40px; top: -20px;" onclick="location.href='driver_index.html';">Back</button>
-                <h1>Driver Login</h1>
+                <h>Driver Login</h>
             </div>
         </div>
 		
@@ -20,15 +20,22 @@
             <div class="main" >
                  <br><br>
                 <lable>Phone Number</lable>
-                <br><br>
+                <br><br><br><br>
                 <input type="text" name="user" hidden="true" value="passenger">
                 <input type="text" id="contactNo" name="contactNo">
-                <br><br>
+                <br><br><br><br>
                 <lable>Password</lable>
-                <br><br>
+                <br><br><br><br>
                 <input id="password" type="password" name="password">
+<<<<<<< HEAD
+                <br><br><br><br>
+                <button class="btnL btn-6 btn-6l" id="loginButton"  >Login</button>
+=======
                 <br><br>
+                <div class="alert alert-danger" role="alert" id="wrongPwd" style="display:none;font-color:red
+                ">You entered wrong password or username!</div>
                 <button class="btn btn-6 btn-6l" id="loginButton"  >Login</button>
+>>>>>>> d8ad62f0276c40454a2edf6430870e576da2a912
             </div>
         </div>
         
@@ -51,6 +58,10 @@
                 }).done(function(data){
                     if(data=="1"){
                         $(location).attr('href', './driver_home.html')
+                    }else if(data=="0"){
+                        $('#wrongPwd').show();
+                    }else if(data=="-1"){
+                        $('#wrongPwd').show();
                     }
                 });
 
